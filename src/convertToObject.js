@@ -6,7 +6,7 @@
  * @return {object}
  */
 function convertToObject(sourceString) {
-  const result = {};
+  const stylesObject = {};
 
   sourceString
     .split(';')
@@ -15,10 +15,10 @@ function convertToObject(sourceString) {
     .forEach((item) => {
       const [selector, name] = item.split(':').map((part) => part.trim());
 
-      return (result[selector] = name);
+      return (stylesObject[selector] = name);
     });
 
-  return result;
+  return stylesObject;
 }
 
 module.exports = convertToObject;
