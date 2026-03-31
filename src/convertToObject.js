@@ -10,8 +10,8 @@ function convertToObject(sourceString) {
 
   sourceString
     .split(';')
-    .map((item) => item.trim())
     .filter((item) => item)
+    .map((item) => item.trim())
     .forEach((item) => {
       const [selector, name] = item.split(':').map((part) => part.trim());
 
